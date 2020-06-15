@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {View ,Text } from 'react-native';
+import {ScrollView ,Text } from 'react-native';
 import { Card } from 'react-native-elements';
+import * as Animatable from 'react-native-animatable';
 
 class Contact extends Component{
     static navigationOptions = {
@@ -9,7 +10,8 @@ class Contact extends Component{
 
     render(){
         return(
-            <View>
+            <ScrollView>
+                <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
                 <Card
                     title="Contact Information"
                 >
@@ -20,7 +22,8 @@ class Contact extends Component{
                     <Text style={{margin:10}}>Fax: +852 8765 4321</Text>
                     <Text style={{margin:10}}>Email:confusion@food.net</Text>
                 </Card>
-            </View>
+                </Animatable.View>
+            </ScrollView>
         )
     }
 }
